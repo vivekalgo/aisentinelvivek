@@ -17,7 +17,8 @@ python --version
 echo.
 echo Setting environment variables...
 set PYTHONIOENCODING=utf-8
-set GEMINI_API_KEY=AIzaSyDVK7PblqayVc9k82UBQU8onSFMlITZjmg
+REM API Keys are loaded from .env file by the application
+if not exist ".env" echo [WARNING] .env file not found! Please create one with GEMINI_API_KEY_1=...
 
 echo.
 echo Killing any process on port 8000...
