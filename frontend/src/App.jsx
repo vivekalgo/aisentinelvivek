@@ -189,9 +189,8 @@ function App() {
                                 💰 Salary Analysis
                             </button>
                             <a
-                                href="https://github.com/vivekalgo/aisentinelindiaapk/releases/latest/download/app-release.apk"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="/app-release.apk"
+                                download="AI-Legal-Sentinel.apk"
                                 className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-medium transition-all shadow-md hover:shadow-lg ml-2"
                                 title="Download Android App"
                             >
