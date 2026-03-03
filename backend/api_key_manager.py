@@ -127,7 +127,7 @@ class GeminiAPIKeyManager:
                 # Check if it's a quota error
                 if self._is_quota_error(e):
                     print(f"[WARN] API key #{key_index + 1} quota exhausted: {error_str[:100]}")
-                    print(f"[ROTATION] 🔄 Switching to next API Key due to quota limit...")
+                    print(f"[ROTATION] Switching to next API Key due to quota limit...")
                     
                     # Small delay before trying next key
                     time.sleep(0.5)

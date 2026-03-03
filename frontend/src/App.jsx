@@ -10,10 +10,11 @@ import Badge from './components/Badge'
 import ComparisonStats from './components/ComparisonStats'
 import SevenAnswers from './components/SevenAnswers'
 import SalaryBreakdownCard from './components/SalaryBreakdownCard'
+import { supabase } from './supabaseClient'
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
-function App() {
+function App({ session }) {
     // Mode state: 'general' or 'hr'
     const [mode, setMode] = useState('general')
 
@@ -158,6 +159,21 @@ function App() {
                                 </p>
                             </div>
                         </div>
+
+                        {/* User Profile & Logout */}
+                        {session && (
+                            <div className="flex items-center gap-4 border-r border-slate-700 pr-4">
+                                <span className="text-sm font-medium text-slate-300">
+                                    {session.user.email}
+                                </span>
+                                <button
+                                    onClick={() => supabase.auth.signOut()}
+                                    className="px-3 py-1.5 rounded-lg text-sm font-medium text-white bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500 hover:text-white transition-all shadow-sm"
+                                >
+                                    Log Out
+                                </button>
+                            </div>
+                        )}
 
                         {/* Mode Switcher */}
                         <div className="bg-slate-800 p-1 rounded-xl flex border border-slate-700">
